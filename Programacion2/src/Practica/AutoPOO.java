@@ -1,9 +1,6 @@
-package Practica.Poo;
-public class Auto {
-    private String Marca;
-    private String Modelo;
-    private String Motor;
-    private String Color;
+package Practica;
+class Auto {
+    private String Marca, Modelo, Motor, Color;
     private double Precio;
 
     public Auto(String marca, String modelo, String motor, String color, double precio){
@@ -43,3 +40,10 @@ public class Auto {
     }
     
 }
+
+public class AutoPOO{
+    public static void main(String[] args) {
+        
+    }
+}
+
