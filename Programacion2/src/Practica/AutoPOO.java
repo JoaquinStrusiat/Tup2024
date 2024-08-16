@@ -33,17 +33,19 @@ class Auto {
     
     public String getInfoCompleta() {
         return "Marca: " + this.Marca + 
-               ", Modelo: " + this.Modelo + 
-               ", Motor: " + this.Motor + 
-               ", Color: " + this.Color + 
-               ", Precio: $" + this.Precio;
+               "\nModelo: " + this.Modelo + 
+               "\nMotor: " + this.Motor + 
+               "\nColor: " + this.Color + 
+               "\nPrecio: $" + this.Precio;
     }
     
 }
 
 public class AutoPOO{
     public static void main(String[] args) {
-        
+
+        Auto auto1 = new Auto("Toyota", "Hilux", "Duramax 2.4", "Blanca", 40000);
+        System.out.println(auto1.getInfoCompleta());  
     }
 }
 
