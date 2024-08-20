@@ -28,11 +28,13 @@ class Persona {
         Period edad = Period.between(nacimientoFormateaDate, LocalDate.now());
 
         String getPersona = 
-        "Nombre: " + nombre +
+        "------------------------------ " +
+        "\nNombre: " + nombre +
         "\n Apellido: " + apellido +
         "\n Edad: " + edad + 
         "\n DNI: " + dni +
-        "\n Sexo: " + sexo;
+        "\n Sexo: " + sexo +
+        "\n------------------------------ ";
         return getPersona;
     }   
 }
@@ -45,33 +47,38 @@ public class TeoriaPOO {
             boolean pass = true;
             while (pass) {
                 System.out.print(
-                    "Ingrese una opcion:"+ 
+                    "\nIngrese una opcion:"+ 
                     "\n\t1_ Cargar una nueva Persona"+
                     "\n\t2_ Ver Personas"+
                     "\n\t3_ Modificar Persona"+
                     "\n\t4_ Salir"+
-                    "\n\n\tOPCION: "
+                    "\n\nINGRESE OPCION: "
                     );
                     int value = sc.nextInt();
                     sc.nextLine();
                     switch (value) {
                         case 1:
-                            System.out.print("Ingrese el/los Nombre/s de la persona: ");
+                            System.out.print("Ingrese su/sus Nombre/s: ");
                             String name = sc.nextLine();
-                            System.out.print("Ingrese el apellido de la persona: ");
+                            System.out.print("Ingrese su/sus Apellido/s: ");
                             String apellido = sc.nextLine();
-                            System.out.print("Ingrese la fecha de nacimiento de la persona (dd/MM/yyyy): ");
+                            System.out.print("Ingrese su fecha de nacimiento (dd/MM/yyyy): ");
                             String fechaNacimiento = sc.nextLine();
-                            System.out.print("Ingrese el DNI de la persona: ");
+                            System.out.print("Ingrese su DNI: ");
                             int dni = sc.nextInt();
-                            System.out.print("Ingrese el sexo de la persona (M/F): ");
+                            System.out.print("Ingrese su sexo (M/F/X): ");
                             char sexo = sc.next().charAt(0);
-                            Persona nuevaPersona = new Persona(name, apellido, fechaNacimiento, dni, sexo); //Creo un nuevo objeto Persona
-                            ListaPersonas.add(nuevaPersona); //Lo agrego a mi lista
-                            System.out.println("PERSONA CARGADA CON EXITO");
 
+                            //Creo un nuevo objeto Persona
+                            Persona nuevaPersona = new Persona(name, apellido, fechaNacimiento, dni, sexo);
+                            //Lo agrego a mi lista
+                            ListaPersonas.add(nuevaPersona); 
+                            System.out.println("---PERSONA CARGADA CON EXITO---");
                             break;
                         case 2:
+                            for(Persona persona : ListaPersonas){
+                                System.out.println(persona.toString());
+                            }
                             break;
                         case 3:
                             break;
