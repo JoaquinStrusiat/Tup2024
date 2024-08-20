@@ -44,8 +44,16 @@ class Auto {
 public class AutoPOO{
     public static void main(String[] args) {
 
-        Auto auto1 = new Auto("Toyota", "Hilux", "Duramax 2.4", "Blanca", 40000);
-        System.out.println(auto1.getInfoCompleta());  
+        Auto auto1 = new Auto(
+            "Toyota", 
+            "Hilux", 
+            "Duramax 2.4", 
+            "Blanca", 
+            40000);
+
+        System.out.println(auto1.getInfoCompleta());
+
+        
     }
 }
 
