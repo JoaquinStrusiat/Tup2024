@@ -52,7 +52,6 @@ public class AutoPOO{
             40000);
 
         System.out.println(auto1.getInfoCompleta());
-
         
     }
 }
