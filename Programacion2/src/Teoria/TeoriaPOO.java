@@ -25,13 +25,16 @@ class Persona {
         //Doy formato de fecha a mi atributo "fechaNacimiento".
         LocalDate nacimientoFormateaDate = LocalDate.parse(fechaNacimiento, Formato);
         //Calculo la edad pasando el la fecha formateada y la fecha actual a Period.
-        Period edad = Period.between(nacimientoFormateaDate, LocalDate.now());
+        LocalDate fechaActual = LocalDate.now();
+        Period edad = Period.between(nacimientoFormateaDate, fechaActual);
+        //Lo vuelvo a transformar en string.
+        String edadStr = edad.getYears() + " años";
 
         String getPersona = 
         "------------------------------ " +
         "\nNombre: " + nombre +
         "\n Apellido: " + apellido +
-        "\n Edad: " + edad + 
+        "\n Edad: " + edadStr + 
         "\n DNI: " + dni +
         "\n Sexo: " + sexo +
         "\n------------------------------ ";
