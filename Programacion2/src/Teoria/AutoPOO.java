@@ -1,4 +1,4 @@
-package Practica;
+package Teoria;
 class Auto {
     private String Marca, Modelo, Motor, Color;
     private double Precio;
