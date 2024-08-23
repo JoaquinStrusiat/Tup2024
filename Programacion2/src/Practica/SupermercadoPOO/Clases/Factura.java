@@ -11,13 +11,17 @@ public class Factura {
         this.caja = caja;
         this.carrito = carrito;
     }
-    public double getTotal(){
+    public String getTotal(){
         //Calculo el total de la compra
         double total = 0;
         for(Producto producto : carrito){
             total = total + (producto.getCantidad() * producto.getPrecio());
         }
-        return total;
+        if (cliente.isMayorista() == true){
+            return "$" + total + "\nDescuento mayorista del 20%: $" + total*0.8;
+        } else {
+            return "$" + total;
+        } 
     }
     public String getProductos(){
         String productos = "";
@@ -29,15 +33,15 @@ public class Factura {
 
     public String getFactura(){
         String factura = 
-        "------------Factura------------" + 
+        "\n------------Factura de Compra------------" + 
         "\nInformacion de la caja:\n" + 
         caja.getInfoCaja() + 
-        "\nInformacion del cliente:\n" + 
+        "\n\nInformacion del cliente:\n" + 
         cliente.toString() + 
-        "\n -------------------------------\n" + 
+        "\n--------------------------------------------------\n" + 
         "Productos: " + 
         getProductos() + 
-        "-------------------------------\n" + 
+        "--------------------------------------------------\n" + 
         "Total a pagar: " + getTotal();
         return factura;
     }

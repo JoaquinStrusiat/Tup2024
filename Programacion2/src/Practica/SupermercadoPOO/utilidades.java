@@ -35,6 +35,10 @@ public class utilidades {
         productos.add(new Producto("Sprite", 1500));
         productos.add(new Producto("Alfajor Tatin", 600));
         productos.add(new Producto("Caramelos Masticables", 20.50));
+        productos.add(new Producto("Pepsi", 1700));
+        productos.add(new Producto("Fanta", 1600));
+        productos.add(new Producto("Galletitas Oreo", 800));
+        productos.add(new Producto("Chicles", 50));
         return productos;
     }
 

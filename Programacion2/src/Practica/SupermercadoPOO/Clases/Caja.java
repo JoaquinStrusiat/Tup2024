@@ -10,7 +10,7 @@ public class Caja {
     }
 
     public String getInfoCaja(){
-        return "Empleado: " + empleado.getNombreCompleto() + "Numero de Caja: " + this.nroCaja;
+        return "Empleado: " + empleado.getNombreCompleto() + "\nNumero de Caja: " + this.nroCaja;
     }
 
 
