@@ -1,15 +1,14 @@
 package Practica.SupermercadoPOO.Clases;
-import java.util.ArrayList;
 
 public class Producto {
     private String nombre;
     private double precio;
     private int cantidad;
 
-    public Producto(String nombre, double precio, int cantidad) {
+    public Producto(String nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
-        this.cantidad = cantidad;
+        this.cantidad = 0;
     }
 
     public double getPrecio() {
@@ -21,16 +20,15 @@ public class Producto {
     public int getCantidad() {
         return cantidad;
     }
-    public String toString() {
-        return "Producto: " + nombre + ", Precio: $" + String.format("%.2f", precio) + ", Unidades disponibles: " + cantidad;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
+    public String getProducto(){
+        double total = precio * cantidad;
+        return nombre + " - $" + String.format("%.2f", precio) + " - [" + cantidad + " unidades = $" + String.format("%.2f", total) + "]";
+    } 
 
-    public  ArrayList<Producto> getProductos(){
-        ArrayList<Producto> productos = new ArrayList<>();
-        productos.add(new Producto("CocaCola", 1800, 100));
-        productos.add(new Producto("Sprite", 1500, 50));
-        productos.add(new Producto("Alfajor Tatin", 600, 50));
-        productos.add(new Producto("Caramelos Masticables", 20.50, 200));
-        return productos;
+    public String toString() {
+        return nombre + " - $" + String.format("%.2f", precio);
     }
 }

@@ -33,10 +33,10 @@ class Persona {
         String getPersona = 
         "------------------------------ " +
         "\nNombre: " + nombre +
-        "\n Apellido: " + apellido +
-        "\n Edad: " + edadStr + 
-        "\n DNI: " + dni +
-        "\n Sexo: " + sexo +
+        "\nApellido: " + apellido +
+        "\nEdad: " + edadStr + 
+        "\nDNI: " + dni +
+        "\nSexo: " + sexo +
         "\n------------------------------ ";
         return getPersona;
     }   
