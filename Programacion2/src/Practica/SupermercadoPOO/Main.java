@@ -12,10 +12,7 @@ public class Main {
             Empleado empleado2 = new Empleado("Joaquin", "Strusiat", 87654321, 100000);
  
             // Para simplificar el codigo vamos a crear manualmente 4 cajas
-            Caja caja1 = new Caja(empleado1, 1);
-            Caja caja2 = new Caja(empleado2, 2);
-            Caja caja3 = new Caja(empleado1, 3);
-            Caja caja4 = new Caja(empleado2, 4);
+            ArrayList<Caja> cajas = utilidades.getCajas(empleado1, empleado2);
             
             System.out.println("--------Inicio de compra--------");
 
@@ -46,7 +43,7 @@ public class Main {
                 }
                 System.out.println("------------------------------------------");
                 
-                System.out.println(
+                System.out.print(
                     "Ingrese una opcion:" + 
                     "\n\t1-Agregar producto al carrito" + 
                     "\n\t2-Finalizar Compra" + 
@@ -64,6 +61,11 @@ public class Main {
                         carrito.add(listaProductos.get(ind));
                         break;
                     case 2:
+                        System.out.print("Selecione en que Caja Pagar [caja 1, caja 2, caja 3 o caja 4]: ");
+                        int op = sc.nextInt();
+                        Caja caja = cajas.get(op);
+                        Factura facturaDeCompra = new Factura(caja, cliente1, carrito);
+                        System.out.println(facturaDeCompra.getFactura());
                         pas = false;
                         break;
                     case 3:

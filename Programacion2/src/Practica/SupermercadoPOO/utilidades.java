@@ -3,7 +3,9 @@ package Practica.SupermercadoPOO;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Practica.SupermercadoPOO.Clases.Caja;
 import Practica.SupermercadoPOO.Clases.Cliente;
+import Practica.SupermercadoPOO.Clases.Empleado;
 import Practica.SupermercadoPOO.Clases.Producto;
 
 public class utilidades {
@@ -35,4 +37,13 @@ public class utilidades {
         productos.add(new Producto("Caramelos Masticables", 20.50));
         return productos;
     }
+
+    public static ArrayList<Caja> getCajas(Empleado empleado1, Empleado empleado2) {
+    ArrayList<Caja> cajas = new ArrayList<>();
+    cajas.add(new Caja(empleado1, 1));
+    cajas.add(new Caja(empleado2, 2));
+    cajas.add(new Caja(empleado1, 3));
+    cajas.add(new Caja(empleado2, 4));
+    return cajas;
+}
 }

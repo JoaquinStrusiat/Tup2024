@@ -4,29 +4,41 @@ import java.util.ArrayList;
 public class Factura {
     private Caja caja;
     private Cliente cliente;
-    private ArrayList<Producto> productos;
-    private double total;
+    private ArrayList<Producto> carrito;
     
-    public Factura(Caja caja, Cliente cliente, double total, ArrayList<Producto> productosComprados) {
+    public Factura(Caja caja, Cliente cliente, ArrayList<Producto> carrito) {
         this.cliente = cliente;
         this.caja = caja;
-        this.productos = productosComprados;
-        this.total = total;
+        this.carrito = carrito;
     }
-
-    public String getCaja() {
-        return caja.getInfoCaja();
+    public double getTotal(){
+        //Calculo el total de la compra
+        double total = 0;
+        for(Producto producto : carrito){
+            total = total + (producto.getCantidad() * producto.getPrecio());
+        }
+        return total;
     }
-
-    public String getCliente() {
-        return cliente.toString();
-    }
-
-    public ArrayList<Producto> getProductos() {
+    public String getProductos(){
+        String productos = "";
+        for(Producto producto : carrito){
+            productos += producto.getProducto() + "\n";
+        }
         return productos;
     }
 
-    public double getTotal() {
-        return total;
+    public String getFactura(){
+        String factura = 
+        "------------Factura------------" + 
+        "\nInformacion de la caja:\n" + 
+        caja.getInfoCaja() + 
+        "\nInformacion del cliente:\n" + 
+        cliente.toString() + 
+        "\n -------------------------------\n" + 
+        "Productos: " + 
+        getProductos() + 
+        "-------------------------------\n" + 
+        "Total a pagar: " + getTotal();
+        return factura;
     }
 }
