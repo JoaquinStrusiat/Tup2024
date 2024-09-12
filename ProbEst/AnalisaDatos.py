@@ -1,7 +1,7 @@
 import pandas as pd;
 from Datos import *
 import math
-# df = pd.read_csv('c:/Users/joaqu/Documents/TUP 2024/Segundo Cuatrimestre/ProbEst/cars.csv')
+# s = pd.read_csv('c:/Users/joaqu/Documents/TUP 2024/Segundo Cuatrimestre/ProbEst/cars.csv')
 
 # Leemos el array de datos y lo transformamos en una Serie
 s = pd.Series(arrayDate)
