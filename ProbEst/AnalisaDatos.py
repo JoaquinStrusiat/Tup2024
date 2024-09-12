@@ -5,19 +5,19 @@ import math
 
 # Leemos el array de datos y lo transformamos en una Serie
 s = pd.Series(arrayDate)
-box("Muestra",s)
+boxTable("Muestra de Datos",s)
 
 #Calculamos el rango de nuestra muestra
 rang = s.max() - s.min()
-box("Rango de mi Muestra",rang)
+boxData("Rango de mi Muestra: ",rang)
 
 #Número de intervalos para armar mi tabla
 Numint =  1 + 3.3*math.log(s.size, 10)
-box("Número de Intervalos", Numint)
+boxData("Número de Intervalos: ", Numint)
 
 #Amplitud de cada intervalo
 Amp = rang / Numint
-box("Amplitud de los Intervalos", Amp)
+boxData("Amplitud de los Intervalos: ", Amp)
 
 
 
