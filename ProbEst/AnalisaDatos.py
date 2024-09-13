@@ -19,5 +19,16 @@ boxData("Número de Intervalos: ", Numint)
 Amp = rang / Numint
 boxData("Amplitud de los Intervalos: ", Amp)
 
+#Calculamos la media
+media = s.mean()
+boxData("Media: ", media)
+
+#Calculamos Mediana
+mediana = s.median()
+boxData("Mediana: ", mediana)
+
+#Calculamos Moda
+moda = s.mode()[0]
+boxData("Moda: ", moda)
 
 
