@@ -84,15 +84,14 @@ public class Main {
                     System.out.print("\nIngrese la cantidad de platos que necesita hacer: ");
                     int cantidadPlatos = sc.nextInt();
 
-                    System.out.println("\n-------------------------------------------- Lista de la Compra --------------------------------------------");
-                    System.out.println("--------------------------------------------------------------------------------------------------------------");
+                    System.out.println("\n-------------------------------------------- Lista de la Compra --------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------");
                     System.out.println(String.format("%-25s | %-25s | %-20s | %-25s | %-20s", 
                     "Ingrediente", "Cantidad a Usar (Total)", "Precio por Unidad", "Mínimo de Unidades", "Precio Total"));
-                    System.out.println("--------------------------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------");
 
                     double subtotal = 0.0;
 
-                    // Suponemos que ambos arrays comparten los mismos índices
                     for (int i = 0; i < Ingrediente.getListaDeIngredientes().size(); i++) {
                         // Obtenemos el ingrediente de listaDeIngredientes y nuevaListaDeIng por índice
                         Ingrediente ingBase = Ingrediente.getListaDeIngredientes().get(i);
@@ -123,9 +122,9 @@ public class Main {
                         // Sumar al subtotal
                         subtotal += precioTotal;
                     }
-                    System.out.println("--------------------------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------");
                     System.out.println(String.format("Subtotal para comprar todos los ingredientes: $%.2f", subtotal));
-                    System.out.println("--------------------------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------");
                     break;
                 case 6:
                     System.out.println("\nSaliendo del programa...");
