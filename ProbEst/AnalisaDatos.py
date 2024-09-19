@@ -1,34 +1,26 @@
-import pandas as pd;
 from Datos import *
-import math
-# s = pd.read_csv('c:/Users/joaqu/Documents/TUP 2024/Segundo Cuatrimestre/ProbEst/cars.csv')
+from Funcionalidades import *
+
+# Definimos Data como la variable que almacena nuestra información 
+# ---MODIFICAR SOLO ACÁ ---
+data = ArrayData
+# -------------------------
+
+# Printeamos los datos por pantalla
+BoxData("Datos", data)
 
 # Leemos el array de datos y lo transformamos en una Serie
-s = pd.Series(arrayDate)
-boxTable("Muestra de Datos",s)
+serie = toSerie(data)
 
-#Calculamos el rango de nuestra muestra
-rang = s.max() - s.min()
-boxData("Rango de mi Muestra: ",rang)
+# Muestro por pantalla el Rango, el número de intervalos posibles y la amplitud posible
+primaryDates(serie)
 
-#Número de intervalos para armar mi tabla
-Numint =  1 + 3.3*math.log(s.size, 10)
-boxData("Número de Intervalos: ", Numint)
+# Dado estos valores preguntamos al usuario lo siguiente:
+print("En base a los valores devueltos, ingrese el numero de intervalos y la amplitud con la que quiere trabajar.", 
+      "\nTenga en cuenta que ambos tienen que ser enteros positivos...")
 
-#Amplitud de cada intervalo
-Amp = rang / Numint
-boxData("Amplitud de los Intervalos: ", Amp)
+Intervalos = int(input("Intervalos: "))
+Amplitud = float(input("Amplitud: "))
 
-#Calculamos la media
-media = s.mean()
-boxData("Media: ", media)
-
-#Calculamos Mediana
-mediana = s.median()
-boxData("Mediana: ", mediana)
-
-#Calculamos Moda
-moda = s.mode()[0]
-boxData("Moda: ", moda)
-
+createTable(serie, Intervalos, Amplitud)
 
