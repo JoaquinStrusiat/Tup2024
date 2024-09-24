@@ -15,12 +15,11 @@ serie = toSerie(data)
 # Muestro por pantalla el Rango, el número de intervalos posibles y la amplitud posible
 primaryDates(serie)
 
-# Dado estos valores preguntamos al usuario lo siguiente:
-print("En base a los valores devueltos, ingrese el numero de intervalos y la amplitud con la que quiere trabajar.", 
-      "\nTenga en cuenta que ambos tienen que ser enteros positivos...")
+# Dado estos valores preguntamos al usuario como crear la tabla y la mostramos por pantalla
+createTable(serie)
 
-Intervalos = int(input("Intervalos: "))
-Amplitud = float(input("Amplitud: "))
+# Mostramos las medidas de tendencia central
+centraTendencyMeasure(serie)
 
-createTable(serie, Intervalos, Amplitud)
-
+# Mostramos las medidas de disperción
+dispersioMeasure(serie)

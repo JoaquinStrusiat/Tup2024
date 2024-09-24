@@ -12,7 +12,7 @@ def toSerie(Array):
     return serie
 
 def primaryDates(serie):
-    print("------------------------------------------------------------")
+    print("---------------------- Datos Primarios ----------------------")
     #Valor mínimo de la serie
     print("Valor minimo: ", serie.min())
 
@@ -30,9 +30,17 @@ def primaryDates(serie):
     #Amplitud de cada intervalo
     Amp = Rang / Numint
     print("Amplitud posible: ", Amp)
-    print("------------------------------------------------------------\n")
+    print("-------------------------------------------------------------\n")
 
-def createTable(serie, intervalos, amplitud):
+def createTable(serie):
+    print("-------------------------------------------------------------")
+    print("En base a los valores devueltos, ingrese el numero de \nintervalos y la amplitud con la que quiere trabajar.", 
+        "\nTenga en cuenta que ambos tienen que ser enteros positivos...\n")
+
+    intervalos = int(input("Intervalos: "))
+    amplitud = float(input("Amplitud: "))
+    print("-------------------------------------------------------------")
+
     object = {"Verd.Lim.Inf.": [],
               "Verd.Lim.Sup.": [],
               "Frec.Abs.":[],
@@ -73,22 +81,47 @@ def createTable(serie, intervalos, amplitud):
 
     # Crear el DataFrame
     df = pd.DataFrame(object)
-    print(df)
+    print(df, "\n")
 
+def centraTendencyMeasure(serie):
+    print("-------------- Medidas de Tendencia Central----------------")
 
-              
-    
+    #Calculamos la media
+    media = serie.mean()
+    print("Media Aritmética: ", media)
 
-'''
-#Calculamos la media
-media = s.mean()
-boxData("Media: ", media)
+    #Calculamos Mediana
+    mediana = serie.median()
+    print("Mediana Aritmética: ", mediana)
 
-#Calculamos Mediana
-mediana = s.median()
-boxData("Mediana: ", mediana)
+    #Calculamos Moda
+    moda = serie.mode()[0]
+    print("Moda Aritmética: ", moda)
 
-#Calculamos Moda
-moda = s.mode()[0]
-boxData("Moda: ", moda)
-'''
+    print("-------------------------------------------------------------\n")
+
+def dispersioMeasure(serie):
+    print("------------------ Medidas de Dispersión --------------------")
+
+    #Calculamos la media
+    variance = serie.var()
+    print("Varianza : ", variance)
+
+    #Calculamos Desvio estandar
+    stdVariance = serie.std()
+    print("Desvio estandar: ", stdVariance)
+
+    # Coeficiente variacion
+    cv = (stdVariance/ serie.mean())
+    print("Coeficiente variacion: ", cv, " ==> ", round(cv*100, 2), "%")
+
+    # Asimetría 
+    as1 = (serie.mean() - serie.mode()[0]) / stdVariance
+    as2 = (3*(serie.mean() - serie.median())) / stdVariance
+    print("Asimetría 1: ", as1)
+    print("Asimetría 2: ", as2)
+    if (as1 > 0 and as2 > 0):
+        print("------ASIMETRIA POSITIVA------")
+    else:
+        print("------ASIMETRIA NEGATIVA------")
+    print("-------------------------------------------------------------\n")
