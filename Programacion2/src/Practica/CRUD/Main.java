@@ -1,6 +1,5 @@
 package Practica.CRUD;
 import java.util.Scanner;
-//import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +16,6 @@ public class Main {
                 "\n\tINGRESE OPCION: ");
             int val = sc.nextInt();
 
-
             switch (val) {
                 case 1:
                     break;
@@ -30,8 +28,8 @@ public class Main {
                 case 5:
                     pass = false;
                     break;
-            
                 default:
+                System.out.println("OPCION NO VALIDA");
                     break;
             }            
         }
