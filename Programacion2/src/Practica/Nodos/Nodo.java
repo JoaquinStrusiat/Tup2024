@@ -11,15 +11,16 @@ public class Nodo {
         this.children = new ArrayList<>();
     }
 
-    public void AddHijo(Nodo child){
+    public void addChild(Nodo child){
         children.add(child);
     }
 
-    public int getSum(){
+    public int sumNodos(){ 
+        int total = value;
         for(Nodo child : children){
-            return Nodo.
+            total += child.sumNodos();
         }
+        return total;
     }
-
 }
 

@@ -1,4 +1,4 @@
-package Practica.CRUD;
+package Practica.Crud;
 import java.util.Scanner;
 
 public class Main {
